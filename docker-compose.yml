@@ -10,13 +10,11 @@ services:
   ton-proxy:
     container_name: ton-proxy
     image: ton-proxy
-    env_file:
-      - .env
     environment:
-      SERVER_IP: localhost
+      SERVER_IP: ${IP_ADDRESS}
       WEB_SERVER_IP: ton-site
       WEB_SERVER_PORT: 80
-      ADNL_ADRESS: ${ADNL_ADRESS}
+      ADNL_ADRESS: ${ADNL_ADDRESS}
       LOG: /app/log/tonsite.log
       CONFIG: /app/global.config.json
     user: "$UID:$GID"
