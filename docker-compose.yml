@@ -10,6 +10,8 @@ services:
   ton-proxy:
     container_name: ton-proxy
     image: ton-proxy
+    env_file:
+      - .env
     environment:
       SERVER_IP: localhost
       WEB_SERVER_IP: ton-site
