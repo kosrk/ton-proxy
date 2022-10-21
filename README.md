@@ -8,7 +8,7 @@ mkdir keyring
 mkdir log
 docker-compose run ton-id-gen
 (echo ADNL_ADDRESS={ADNL_address_from_ton-id-gen_output} & echo IP_ADDRESS={host_ip_address}) > .env
-docker-compose run ton-site
-docker-compose run ton-proxy
+docker-compose run --name ton-site ton-site
+docker-compose run --name ton-proxy ton-proxy
 
 ```
